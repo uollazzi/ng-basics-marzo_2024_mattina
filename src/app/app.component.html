@@ -1,9 +1,26 @@
 <app-intestazione></app-intestazione>
 <h1>{{ title }}</h1>
+<input type="text" [(ngModel)]="title" />
+<!-- <button type="button" (click)="aggiornaTitolo()">Aggiorna titolo</button> -->
+<hr />
+<h1 *ngIf="numero">
+  <ul>
+    <li>1</li>
+    <li>2</li>
+  </ul>
+
+  Numero: {{ numero }}
+</h1>
+
 <hr />
 
-<h3>Preferiti</h3>
-<app-lista-video></app-lista-video>
+<button type="button" (click)="togglePreferiti()">
+  {{ preferitiVisibili ? "Nascondi" : "Mostra" }} Preferiti
+</button>
+<div *ngIf="preferitiVisibili">
+  <h3>Preferiti</h3>
+  <app-lista-video></app-lista-video>
+</div>
 
 <h3>Raccomandati</h3>
 <app-lista-video></app-lista-video>

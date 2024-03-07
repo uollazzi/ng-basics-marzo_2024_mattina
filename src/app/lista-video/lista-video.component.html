@@ -1,4 +1,15 @@
 <div style="display: flex; gap: 1rem">
-  <app-video></app-video>
-  <app-video></app-video>
+  <app-video *ngFor="let v of videos"></app-video>
 </div>
+
+<ul>
+  <li *ngFor="let v of videos">
+    <a [href]="v.url" target="_blank">
+      {{ v.titolo }}
+    </a>
+  </li>
+</ul>
+<hr />
+<h3 *ngFor="let video of videos">
+  {{ video.titolo }}
+</h3>
